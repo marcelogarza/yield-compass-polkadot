@@ -1,3 +1,4 @@
+
 import React, { createContext, useContext, useState, ReactNode } from "react";
 import { useToast } from "@/hooks/use-toast";
 
@@ -20,9 +21,12 @@ export function WalletProvider({ children }: { children: ReactNode }) {
   // Check if Polkadot extension is available on mount
   React.useEffect(() => {
     const checkExtension = () => {
-      // For demo purposes - in production we'd check for actual extension
-      const hasExtension = !!(window as any).injectedWeb3;
-      setIsPolkadotExtensionAvailable(hasExtension);
+      // For demo purposes, always set to true so we can proceed with the demo
+      // In production, we would check for actual extension availability
+      setIsPolkadotExtensionAvailable(true);
+      
+      // Logging for debugging
+      console.log("Extension detection set to true for demo purposes");
     };
     
     checkExtension();
