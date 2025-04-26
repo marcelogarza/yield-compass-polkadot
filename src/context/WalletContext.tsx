@@ -1,6 +1,5 @@
-
 import React, { createContext, useContext, useState, ReactNode } from "react";
-import { useToast } from "@/components/ui/use-toast";
+import { useToast } from "@/hooks/use-toast";
 
 interface WalletContextType {
   walletConnected: boolean;
@@ -21,9 +20,8 @@ export function WalletProvider({ children }: { children: ReactNode }) {
   // Check if Polkadot extension is available on mount
   React.useEffect(() => {
     const checkExtension = () => {
-      // In a real app, we'd check for the actual extension
-      // For demo purposes, we'll just check if window.injectedWeb3 exists
-      const hasExtension = !!window.injectedWeb3;
+      // For demo purposes - in production we'd check for actual extension
+      const hasExtension = !!(window as any).injectedWeb3;
       setIsPolkadotExtensionAvailable(hasExtension);
     };
     
