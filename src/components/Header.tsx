@@ -11,9 +11,9 @@ export function Header() {
       <div className="container mx-auto flex justify-between items-center">
         <div className="flex items-center gap-3">
           <img
-            src="/lovable-uploads/44650240-6f1f-4805-872c-e2ab3d9d060d.png"
+            src="/lovable-uploads/68b99a0e-5794-4028-bbdd-84e279766ddc.png"
             alt="Polkadot Logo"
-            className="h-8"
+            className="h-10 w-auto filter brightness-0 invert" // Ensures logo is visible on dark background
           />
           <h1 className="text-xl font-bold text-white">Yield Compass</h1>
         </div>
